@@ -6,6 +6,7 @@ def test_cria_produto():
     product = Product(1, 'empresa', 'produto', datetime.date(2023, 4, 4),
                       datetime.date(2024, 4, 4), 321, 'guardar')
 
+    # orientação do teste pode estar invertido
     assert product.id == 1
     assert product.nome_do_produto == 'empresa'
     assert product.nome_da_empresa == 'produto'
