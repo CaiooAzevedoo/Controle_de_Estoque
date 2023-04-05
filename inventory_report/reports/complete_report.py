@@ -10,11 +10,13 @@ class CompleteReport(SimpleReport):
             else:
                 inventory_products[product["nome_da_empresa"]] += 1
 
-            result = (
+        inventory_products_sorted = sorted(inventory_products.items())
+
+        result = (
                 f"{SimpleReport.generate(inventory_list)}\n"
                 f"Produtos estocados por empresa:\n"
             )
-        for item in inventory_products:
-            result += f"- {item[0]}: {item[1]}\n"
+        for company, quantity in inventory_products_sorted:
+            result += f"- {company}: {quantity}\n"
 
         return result
