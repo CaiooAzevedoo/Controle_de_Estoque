@@ -15,10 +15,9 @@ class SimpleReport:
         empresa_com_mais_produtos = max(set(empresas), key=empresas.count)
 
         result = (
-            f"""Data de fabricação mais antiga: {frabicacao}
-                Data de validade mais próxima: {validades}
-                Empresa com maior quantidade de produtos estocados:
-                {empresa_com_mais_produtos}"""
+            f"Data de fabricação mais antiga: {frabicacao}"
+            f"Data de validade mais próxima: {validades}"
+            f"Empresa com mais produtos: {empresa_com_mais_produtos}"
         )
         
         return result
