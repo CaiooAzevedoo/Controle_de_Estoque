@@ -10,7 +10,9 @@ class CompleteReport(SimpleReport):
             else:
                 inventory_products[product["nome_da_empresa"]] += 1
 
-        inventory_products_sorted = sorted(inventory_products.items())
+        inventory_products_sorted = sorted(inventory_products.items(),
+                                           key=lambda item: item[1],
+                                           reverse=True)
 
         result = (
                 f"{SimpleReport.generate(inventory_list)}\n"
